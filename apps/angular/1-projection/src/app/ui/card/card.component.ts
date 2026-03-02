@@ -13,6 +13,7 @@ import {
     <div
       class="flex w-fit flex-col gap-3 rounded-md border-2 border-black p-4"
       [class]="customClass()">
+      <ng-content select="img"></ng-content>
       @if (type() === CardType.TEACHER) {
         <img ngSrc="assets/img/teacher.png" width="200" height="200" alt="" />
       }
