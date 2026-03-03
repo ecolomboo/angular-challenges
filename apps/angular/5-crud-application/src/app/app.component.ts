@@ -1,12 +1,12 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
-import { randText } from '@ngneat/falso';
+import { Component, OnInit, signal } from '@angular/core';
+import { Todo } from './models/crud.model';
+import { CrudService } from './services/crud.service';
 
 @Component({
   imports: [],
   selector: 'app-root',
   template: `
-    @for (todo of todos; track todo.id) {
+    @for (todo of todos(); track todo.id) {
       {{ todo.title }}
       <button (click)="update(todo)">Update</button>
     }
@@ -14,36 +14,19 @@ import { randText } from '@ngneat/falso';
   styles: [],
 })
 export class AppComponent implements OnInit {
-  private http = inject(HttpClient);
+  todos = signal<Todo[]>([]);
 
-  todos!: any[];
+  constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
-    this.http
-      .get<any[]>('https://jsonplaceholder.typicode.com/todos')
-      .subscribe((todos) => {
-        this.todos = todos;
-      });
+    this.crudService.getTodos().subscribe((todos) => this.todos.set(todos));
   }
 
-  update(todo: any) {
-    this.http
-      .put<any>(
-        `https://jsonplaceholder.typicode.com/todos/${todo.id}`,
-        JSON.stringify({
-          todo: todo.id,
-          title: randText(),
-          body: todo.body,
-          userId: todo.userId,
-        }),
-        {
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-          },
-        },
-      )
-      .subscribe((todoUpdated: any) => {
-        this.todos[todoUpdated.id - 1] = todoUpdated;
-      });
+  update(todo: Todo) {
+    this.crudService.updateTodo(todo).subscribe((toDoUpdated) => {
+      this.todos.update((todos) =>
+        todos.map((t) => (t.id == todo.id ? toDoUpdated : t)),
+      );
+    });
   }
 }
