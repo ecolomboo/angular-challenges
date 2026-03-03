@@ -26,7 +26,7 @@ import { ListItemComponent } from '../../ui/list-item/list-item.component';
       [itemTemplate]="cityTemplate"
       [list]="cities()"
       (onAddItem)="addNewItem()"
-      customClass="bg-light-red">
+      [style]="'rgba(0, 0, 250, 0.1)'">
       <img ngSrc="assets/img/city.png" width="200" height="200" />
     </app-card>
   `,

@@ -12,7 +12,7 @@ import {
   template: `
     <div
       class="flex w-fit flex-col gap-3 rounded-md border-2 border-black p-4"
-      [class]="customClass()">
+      [style.background-color]="style()">
       <ng-content select="img"></ng-content>
 
       <section>
@@ -39,8 +39,8 @@ export class CardComponent {
   @Output() onAddItem = new EventEmitter<void>();
 
   readonly itemTemplate = input.required<TemplateRef<any>>();
+  readonly style = input('');
   readonly list = input<any[] | null>(null);
-  readonly customClass = input('');
 
   deleteItem(id: number) {
     this.onDeleteItem.emit(id);

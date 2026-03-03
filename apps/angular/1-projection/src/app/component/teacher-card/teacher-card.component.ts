@@ -22,17 +22,10 @@ import { ListItemComponent } from '../../ui/list-item/list-item.component';
       [itemTemplate]="teacherTemplate"
       [list]="teachers()"
       (onAddItem)="addNewItem()"
-      customClass="bg-light-red">
+      [style]="'rgba(250, 0, 0, 0.1)'">
       <img ngSrc="assets/img/teacher.png" width="200" height="200" />
     </app-card>
   `,
-  styles: [
-    `
-      ::ng-deep .bg-light-red {
-        background-color: rgba(250, 0, 0, 0.1);
-      }
-    `,
-  ],
   imports: [CardComponent, NgOptimizedImage, ListItemComponent],
 })
 export class TeacherCardComponent implements OnInit {

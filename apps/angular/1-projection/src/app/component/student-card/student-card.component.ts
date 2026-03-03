@@ -26,18 +26,11 @@ import { ListItemComponent } from '../../ui/list-item/list-item.component';
     <app-card
       [itemTemplate]="studentTemplate"
       [list]="students()"
-      customClass="bg-light-green"
+      [style]="'rgba(0, 250, 0, 0.1)'"
       (onAddItem)="addNewItem()">
       <img ngSrc="assets/img/student.webp" width="200" height="200" />
     </app-card>
   `,
-  styles: [
-    `
-      ::ng-deep .bg-light-green {
-        background-color: rgba(0, 250, 0, 0.1);
-      }
-    `,
-  ],
   imports: [CardComponent, NgOptimizedImage, ListItemComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
