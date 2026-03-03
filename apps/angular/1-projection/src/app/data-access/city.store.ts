@@ -7,6 +7,8 @@ import { City } from '../model/city.model';
 export class CityStore {
   private cities = signal<City[]>([]);
 
+  readonly citiesList = this.cities.asReadonly();
+
   addAll(cities: City[]) {
     this.cities.set(cities);
   }
