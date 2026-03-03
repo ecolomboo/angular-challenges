@@ -1,10 +1,12 @@
-import { NgOptimizedImage } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
-import { randStudent, randTeacher } from '../../data-access/fake-http.service';
-import { StudentStore } from '../../data-access/student.store';
-import { TeacherStore } from '../../data-access/teacher.store';
+import { NgTemplateOutlet } from '@angular/common';
+import {
+  Component,
+  EventEmitter,
+  input,
+  Output,
+  TemplateRef,
+} from '@angular/core';
 import { CardType } from '../../model/card.model';
-import { ListItemComponent } from '../list-item/list-item.component';
 
 @Component({
   selector: 'app-card',
@@ -16,10 +18,11 @@ import { ListItemComponent } from '../list-item/list-item.component';
 
       <section>
         @for (item of list(); track item) {
-          <app-list-item
-            [name]="item.firstName"
-            [id]="item.id"
-            [type]="type()"></app-list-item>
+          <ng-container
+            *ngTemplateOutlet="
+              itemTemplate();
+              context: { $implicit: item }
+            "></ng-container>
         }
       </section>
 
@@ -30,24 +33,24 @@ import { ListItemComponent } from '../list-item/list-item.component';
       </button>
     </div>
   `,
-  imports: [ListItemComponent, NgOptimizedImage],
+  imports: [NgTemplateOutlet],
 })
 export class CardComponent {
-  private teacherStore = inject(TeacherStore);
-  private studentStore = inject(StudentStore);
+  @Output() onDeleteItem = new EventEmitter<number>();
+  @Output() onAddItem = new EventEmitter<void>();
 
+  readonly itemTemplate = input.required<TemplateRef<any>>();
   readonly list = input<any[] | null>(null);
   readonly type = input.required<CardType>();
   readonly customClass = input('');
 
   CardType = CardType;
 
+  deleteItem(id: number) {
+    this.onDeleteItem.emit(id);
+  }
+
   addNewItem() {
-    const type = this.type();
-    if (type === CardType.TEACHER) {
-      this.teacherStore.addOne(randTeacher());
-    } else if (type === CardType.STUDENT) {
-      this.studentStore.addOne(randStudent());
-    }
+    this.onAddItem.emit();
   }
 }
