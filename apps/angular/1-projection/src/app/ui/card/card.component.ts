@@ -6,7 +6,6 @@ import {
   Output,
   TemplateRef,
 } from '@angular/core';
-import { CardType } from '../../model/card.model';
 
 @Component({
   selector: 'app-card',
@@ -41,10 +40,7 @@ export class CardComponent {
 
   readonly itemTemplate = input.required<TemplateRef<any>>();
   readonly list = input<any[] | null>(null);
-  readonly type = input.required<CardType>();
   readonly customClass = input('');
-
-  CardType = CardType;
 
   deleteItem(id: number) {
     this.onDeleteItem.emit(id);

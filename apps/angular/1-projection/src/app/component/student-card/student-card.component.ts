@@ -26,9 +26,7 @@ import { ListItemComponent } from '../../ui/list-item/list-item.component';
     <app-card
       [itemTemplate]="studentTemplate"
       [list]="students()"
-      [type]="cardType"
       customClass="bg-light-green"
-      (onDeleteItem)="deleteItem($event)"
       (onAddItem)="addNewItem()">
       <img ngSrc="assets/img/student.webp" width="200" height="200" />
     </app-card>
