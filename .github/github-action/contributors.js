@@ -28,7 +28,8 @@ const sponsors = [
   'pchessah',
   'lukasss88',
   'danncortes',
-  'Gw0zdziu'
+  'Gw0zdziu',
+  'phhien203'
 ];
 
 module.exports = {
