@@ -34,7 +34,7 @@ export class AppComponent {
 
   public displayButton = signal(false);
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onScroll() {
     const pos = window.scrollY;
     this.displayButton.set(pos > 50);

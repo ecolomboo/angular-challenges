@@ -13,14 +13,14 @@
         "outputPath": "dist/apps/forms/64-form-array",
         "browser": "apps/forms/64-form-array/src/main.ts",
         "tsConfig": "apps/forms/64-form-array/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/forms/64-form-array/public"
           }
         ],
-        "styles": ["apps/forms/64-form-array/src/styles.scss"]
+        "styles": ["apps/forms/64-form-array/src/styles.css"]
       },
       "configurations": {
         "production": {
@@ -33,7 +33,7 @@
             {
               "type": "anyComponentStyle",
               "maximumWarning": "4kb",
-              "maximumError": "8kb"
+              "maximumError": "9kb"
             }
           ],
           "outputHashing": "all"

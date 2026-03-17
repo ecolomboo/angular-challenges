@@ -21,13 +21,12 @@ interface MenuItem {
       </a>
     }
   `,
-  styles: [
-    `
-      a.isSelected {
-        @apply bg-gray-600 text-white;
-      }
-    `,
-  ],
+  styles: `
+    @reference "tailwindcss";
+    a.isSelected {
+      @apply bg-gray-600 text-white;
+    }
+  `,
   host: {
     class: 'flex flex-col p-2 gap-2',
   },

@@ -11,7 +11,7 @@ import { RatingControlComponent } from '../rating-control/rating-control.compone
   imports: [RatingControlComponent, ReactiveFormsModule],
   selector: 'app-feedback-form',
   templateUrl: 'feedback-form.component.html',
-  styleUrls: ['feedback-form.component.scss'],
+  styleUrls: ['feedback-form.component.css'],
 })
 export class FeedbackFormComponent {
   @Output()

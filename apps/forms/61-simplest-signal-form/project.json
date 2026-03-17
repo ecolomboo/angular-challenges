@@ -13,14 +13,14 @@
         "outputPath": "dist/apps/forms/61-simplest-signal-form",
         "browser": "apps/forms/61-simplest-signal-form/src/main.ts",
         "tsConfig": "apps/forms/61-simplest-signal-form/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/forms/61-simplest-signal-form/public"
           }
         ],
-        "styles": ["apps/forms/61-simplest-signal-form/src/styles.scss"]
+        "styles": ["apps/forms/61-simplest-signal-form/src/styles.css"]
       },
       "configurations": {
         "production": {

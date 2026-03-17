@@ -67,7 +67,7 @@
     "@nx/angular:application": {
       "e2eTestRunner": "none",
       "linter": "eslint",
-      "style": "scss",
+      "style": "css",
       "unitTestRunner": "none",
       "inlineStyle": "true",
       "inlineTemplate": "true",
@@ -82,7 +82,7 @@
       "buildable": "true"
     },
     "@nx/angular:component": {
-      "style": "scss",
+      "style": "css",
       "changeDetection": "OnPush",
       "inlineStyle": "true",
       "inlineTemplate": "true",

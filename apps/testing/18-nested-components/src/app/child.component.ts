@@ -54,7 +54,7 @@ export class ErrorComponent {}
 
 @Component({
   selector: 'app-child',
-  imports: [],
+  imports: [ErrorComponent, InputComponent, ResultComponent, ButtonComponent],
   template: `
     <app-input #input />
     <result [title]="input.title.value" />
