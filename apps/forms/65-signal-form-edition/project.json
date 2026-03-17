@@ -13,14 +13,14 @@
         "outputPath": "dist/apps/forms/65-signal-form-edition",
         "browser": "apps/forms/65-signal-form-edition/src/main.ts",
         "tsConfig": "apps/forms/65-signal-form-edition/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/forms/65-signal-form-edition/public"
           }
         ],
-        "styles": ["apps/forms/65-signal-form-edition/src/styles.scss"]
+        "styles": ["apps/forms/65-signal-form-edition/src/styles.css"]
       },
       "configurations": {
         "production": {
