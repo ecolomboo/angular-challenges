@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
   imports: [],
   selector: 'app-root',
   styles: `
+@reference "tailwindcss";
+
     section {
       @apply flex flex-1 flex-col gap-5;
     }

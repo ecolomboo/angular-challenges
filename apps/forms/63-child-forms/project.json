@@ -13,14 +13,14 @@
         "outputPath": "dist/apps/forms/63-child-forms",
         "browser": "apps/forms/63-child-forms/src/main.ts",
         "tsConfig": "apps/forms/63-child-forms/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/forms/63-child-forms/public"
           }
         ],
-        "styles": ["apps/forms/63-child-forms/src/styles.scss"]
+        "styles": ["apps/forms/63-child-forms/src/styles.css"]
       },
       "configurations": {
         "production": {

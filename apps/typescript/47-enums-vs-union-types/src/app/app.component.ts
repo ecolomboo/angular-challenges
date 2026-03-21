@@ -39,6 +39,8 @@ enum Direction {
     </section>
   `,
   styles: `
+    @reference "tailwindcss";
+
     section {
       @apply mx-auto my-5 flex w-fit flex-col items-center gap-2;
 

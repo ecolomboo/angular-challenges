@@ -13,7 +13,7 @@
         "outputPath": "dist/apps/forms/62-crossfield-validation-signal-form",
         "browser": "apps/forms/62-crossfield-validation-signal-form/src/main.ts",
         "tsConfig": "apps/forms/62-crossfield-validation-signal-form/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
@@ -21,7 +21,7 @@
           }
         ],
         "styles": [
-          "apps/forms/62-crossfield-validation-signal-form/src/styles.scss"
+          "apps/forms/62-crossfield-validation-signal-form/src/styles.css"
         ]
       },
       "configurations": {

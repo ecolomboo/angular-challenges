@@ -39,6 +39,7 @@ import { PhotoStore } from './photos.store';
     </mat-form-field>
 
     @let vm = vm$ | async;
+    @if (vm) {
       <section class="flex flex-col">
         <section class="flex items-center gap-3">
           <button
@@ -84,6 +85,7 @@ import { PhotoStore } from './photos.store';
           {{ vm.error }}
         </footer>
       </section>
+    }
   `,
   providers: [provideComponentStore(PhotoStore)],
   host: {
