@@ -30,4 +30,10 @@ export class CrudService {
       },
     );
   }
+
+  deleteTodo(todo: Todo): Observable<Todo> {
+    return this.http.delete<Todo>(
+      `https://jsonplaceholder.typicode.com/todos/${todo.id}`,
+    );
+  }
 }
